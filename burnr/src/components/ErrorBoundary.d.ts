@@ -9,7 +9,7 @@ declare class ErrorBoundary extends Component<Props, State> {
     state: State;
     static getDerivedStateFromError(): State;
     componentDidCatch(error: Error, errorInfo: ErrorInfo): void;
-    render(): ReactNode;
+    render(): string | number | boolean | JSX.Element | import("react").ReactFragment | null | undefined;
 }
 export default ErrorBoundary;
 //# sourceMappingURL=ErrorBoundary.d.ts.map

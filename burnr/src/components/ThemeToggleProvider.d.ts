@@ -1,4 +1,5 @@
-import { FunctionComponent } from "react";
-declare const ThemeToggleProvider: FunctionComponent;
+declare const ThemeToggleProvider: ({ children }: {
+    children: React.ReactNode;
+}) => JSX.Element;
 export default ThemeToggleProvider;
 //# sourceMappingURL=ThemeToggleProvider.d.ts.map
