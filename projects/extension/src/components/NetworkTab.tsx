@@ -40,6 +40,14 @@ const NetworkContent = ({ network, health, apps }: NetworkContentProps) => {
     <div className="w-full text-white text-xs">
       <div className="flex flex-row">
         <div className="basis-1/3 text-neutral-400">
+          {emojis.seedling} Best BlockHeight
+        </div>
+        <div className="basis-2/3">
+          {health.bestBlockHeight?.toLocaleString("en-US")}
+        </div>
+      </div>
+      <div className="flex flex-row">
+        <div className="basis-1/3 text-neutral-400">
           {emojis.seedling} Light Client
         </div>
         <div className="basis-2/3">

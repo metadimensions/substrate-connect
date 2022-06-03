@@ -37,6 +37,10 @@ export interface ChainInfo<SandboxId> {
    * Latest known number of peers the chain is connected to.
    */
   peers: number
+  /**
+   * Height of the current best block of the chain.
+   */
+  bestBlockHeight?: number
 
   /**
    * Identifier of the chain obtained through the initial `add-chain`.
@@ -158,6 +162,7 @@ export class ConnectionManagerWithHealth<SandboxId> {
         peers: chain.peers,
         isSyncing: chain.isSyncing,
         ...chainInfo,
+        bestBlockHeight: chain.bestBlockHeight,
       }
     })
   }

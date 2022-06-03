@@ -38,6 +38,10 @@ export interface ChainInfo<SandboxId> {
    * The identifier for the sandbox that has received the message that requests to add a chain.
    */
   sandboxId: SandboxId
+  /**
+   * Height of the current best block of the chain.
+   */
+  bestBlockHeight?: number
 }
 
 export type ToConnectionManager =
@@ -164,6 +168,7 @@ export class ConnectionManager<SandboxId> {
           chainName: chain.name,
           chainId,
           sandboxId,
+          bestBlockHeight: chain.bestBlockHeight,
         })
       }
     }
@@ -575,6 +580,7 @@ interface InitializingChain {
    * initialization it will notice that the `Promise` here is not the same as the one it has.
    */
   smoldotChain: Promise<SmoldotChain>
+  bestBlockHeight?: number
 }
 
 interface ReadyChain {
@@ -604,6 +610,10 @@ interface ReadyChain {
    * Latest known number of peers the chain is connected to.
    */
   peers: number
+  /**
+   * Height of the current best block of the chain.
+   */
+  bestBlockHeight?: number
 }
 
 /**
