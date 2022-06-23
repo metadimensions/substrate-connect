@@ -348,6 +348,11 @@ export class ConnectionManagerWithHealth<SandboxId> {
                   chain.bestBlockHeaderRequestId =
                     "best-block-header:" + this.#nextRpcRqId
                   this.#nextRpcRqId += 1
+                  
+                    params: [
+                        chain.readySubscriptionId,
+                        chain.finalizedBlockHashHex,
+                      ],
 
                   // Notify of the change in status.
                   return {
